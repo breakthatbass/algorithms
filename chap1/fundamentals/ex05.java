@@ -13,7 +13,9 @@ public class ex05
 
 	public static void between(double a, double b)
 	{
-		if (a > 0 && a < 1 && b > 0 && b < 1) System.out.println("true");
-		else System.out.println("false");
+		if (a > 0 && a < 1 && b > 0 && b < 1)
+			System.out.println("true");
+		else 
+			System.out.println("false");
 	}
 }
