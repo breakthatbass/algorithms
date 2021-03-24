@@ -30,8 +30,3 @@ public class ex13
 		}
 	}
 }
-
-
-
-
- 
