@@ -11,7 +11,7 @@
  * calling the function in main, i just start steps at 0.
  */
 
-public class bsearch
+public class recursive_bsearch
 {
 	// with binary search we assume the array is sorted already
 	public static int indexOf(int[] a, int key, int lo, int hi, int steps)
