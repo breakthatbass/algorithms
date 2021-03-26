@@ -1,5 +1,6 @@
 /*
- * give teh sequence of values of p and q that are computed when euclid's
+ * exercise 1.1.24:
+ * give the sequence of values of p and q that are computed when euclid's
  * algorithm is used to compute the greatest common divisor of 105 and 24.
  * 
  * extend the code given on page 4 to develop a program Euclid that takes two
@@ -7,6 +8,12 @@
  * printing out the two arguments for each call on the recursive method. 
  *
  * use your program to compute the greatest common divisor of 1111111 and 1234567...it is 1.
+ *
+ * exercise 1.2.25:
+ * use mathematical induction to prove that euclid's algorithm computes the gcd
+ * of any pair of non-negative integers p and q...i think i'd rather not do
+ * this!
+ *
  *
  */
 
