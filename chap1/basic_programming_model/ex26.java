@@ -4,7 +4,7 @@
  * primitive type. show that the following code puts a, b, and c in ascending
  * order:
 */
-public class ex26 
+public class ex26
 {
 	public static void main(String[] args)
 	{
