@@ -1,0 +1,18 @@
+filtering
+
+which of the following require saving all the values from standard input (in an
+array, say), and which could be implmented as a filter using only a fixed number
+of variables and arrays of fixed size (not dependent on n)?
+
+for each, the input comes from standard input and consists of n real numbers
+between 0 and 1.
+
+- print the maximum and minimum numbers -> can be a filter
+- print the median of the numbers -> must be saved (not filter)
+- print the kth smallest value, for k less than 100 -> can be saved in an array
+  of k size (filter)
+- print the sum of the squares of the numbers -> can be a filter
+- print the average of the n numbers -> must be saved
+- print the percentages of numbers greater than the average -> must be saved
+- print the n numbers in increading order -> must be saved
+- print the n numbers in random order -> must be saved
