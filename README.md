@@ -2,9 +2,12 @@
 ### by Robert Sedgewick & Kevin Wayne
 
 This repo holds my solutions to the exercises in the book.  
+*in progress...*
 
-The book provides a library called [algos4](https://algs4.cs.princeton.edu/code/) to make certain things simpler to spend less time on syntax and more time on the theory behind the data structures and algorithms. However, I try to use the library sparingly because another goal of mine was to learn Java.  
+[algos4](https://algs4.cs.princeton.edu/code/) - library provided by Princeton University and the authors of the book.
 
 When using the library:  
 compile: `javac-algs4 file.java`  
-run: `java-algs4 file`
+run: `java-algs4 file`  
+
+As far as I know, the answers are right. If you see any that are wrong feel free to open an issue or pull request.
