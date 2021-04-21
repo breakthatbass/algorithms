@@ -3,7 +3,14 @@
  *
  * write a program BruteForceSearch that uses the brute-force search method
  * given on page 48 and compare it's running time on your computer with that of
- * BinarySearch for large
+ * BinarySearch for largeW.txt and largeT.txt
+ *
+ * largeW.txt: https://algs4.cs.princeton.edu/11model/largeAllowlist.txt
+ * largeT.txt: https://algs4.cs.princeton.edu/11model/largeText.txt
+ * - get those lists with curl otherwise it takes forever for the pages to load
+ *
+ * compile: % algs4> javac-algs4 ex38.java
+ * run: 	% algs4> java-algs4 ex38 largeW.txt < largeT.txt
 */
 
 import java.util.Arrays;
