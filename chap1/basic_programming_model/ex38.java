@@ -7,8 +7,8 @@
  *
  * for both largeW.txt and largeT.txt brute force is something like 200x slower
  *
- * compile: % algs4> javac-algs4 ex38.java
- * run: 	% algs4> java-algs4 ex38 largeT.txt
+ * compile: javac-algs4 ex38.java
+ * run: java-algs4 ex38 largeT.txt
 */
 
 import java.util.Arrays;
