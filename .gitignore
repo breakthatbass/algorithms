@@ -2,6 +2,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java
 # Edit at https://www.toptal.com/developers/gitignore?templates=java
 
+# we use a couple massive files that we don't need to push
+largeT.txt
+largeW.txt
+
+
 ### Java ###
 # Compiled class file
 *.class
