@@ -29,15 +29,16 @@ public class ex2
 	// get points from stdin and store in an array
 	private static Interval1D[] get_points(int n)
 	{
+		double min, max;
 		Interval1D[] points = new Interval1D[n];
 
 		for (int i = 0; i < n; i++) {
 			
 			// read in two doubles from stdin
 			StdOut.print("min: ");
-			double min = StdIn.readDouble();
+			min = StdIn.readDouble();
 			StdOut.print("max: ");
-			double max = StdIn.readDouble();
+			max = StdIn.readDouble();
 			
 			if (min > max) {
 				System.out.println("min must be smaller than max");
