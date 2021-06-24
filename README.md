@@ -4,9 +4,10 @@
 This repo holds my solutions to the exercises in the book.  
 *in progress...*
 
-[algos4](https://algs4.cs.princeton.edu/code/) - library provided by Princeton University and the authors of the book.
+[algs4 library](https://algs4.cs.princeton.edu/code/) - lib installation info on this page  
+[algs4 docs](https://algs4.cs.princeton.edu/code/javadoc/) - lib documentation
 
-When using the library:  
+When using any of the libs:  
 compile: `javac-algs4 file.java`  
 run: `java-algs4 file`  
 
