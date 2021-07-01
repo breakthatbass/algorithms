@@ -22,8 +22,9 @@ import edu.princeton.cs.algs4.StdRandom;
 public class VisualCounter 
 {
 	// instace variables
-	private int n;
-	private int max;
+	private int n;		// max operations
+	private int max;	// max count
+
 	private int count = 0;
 	private int operations = 0;
 
@@ -32,13 +33,13 @@ public class VisualCounter
 	public VisualCounter(int n, int max) {
 		// this keyword indicates instance vars, not the local vars
 		this.n = n;
-		this.max = max;
+		this.max = Math.abs(max);
 
 		// we'll also just do our StdDraw setting while we're here
 		StdDraw.setCanvasSize(1024, 720);
 		StdDraw.setPenRadius(0.005);
-		StdDraw.setXscale(0, max);
-		StdDraw.setYscale(0, max);
+		StdDraw.setXscale(0, n);
+		StdDraw.setYscale(0, 500);
 	}
 
 	// methods
@@ -62,6 +63,10 @@ public class VisualCounter
 		StdDraw.show();
 	}
 
+	public int tally() {
+		return count;
+	}
+
 	public static void main(String[] args)
 	{
 		if (args.length != 2) {
@@ -70,15 +75,16 @@ public class VisualCounter
 		}
 
 		int n = Integer.parseInt(args[0]);
-		int max = Integer.parseInt(args[0]);
+		int max = Integer.parseInt(args[1]);
 
 		VisualCounter vc = new VisualCounter(n, max);
 
 		for (int i = 0; i < n; i++) {
 			int r = StdRandom.uniform(1,100);
-			System.out.println(r);
+			System.out.println("count: " + vc.tally());
 
-			if (r % 2 == 0)
+			// comapring against 45 to make the plots go up more often than not
+			if (r > 45)
 				vc.increment();
 			else vc.decrement();
 		}
