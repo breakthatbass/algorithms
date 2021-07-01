@@ -68,7 +68,7 @@ public class SmartDate
 
 
 		try { // this will fail
-			SmartDate works = new SmartDate(22, 35, 2021);
+			SmartDate fails = new SmartDate(22, 35, 2021);
 		}
 		catch (IllegalArgumentException ex) {
 			System.out.println(ex.getMessage());
