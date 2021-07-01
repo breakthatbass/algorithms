@@ -14,3 +14,5 @@
 10. [`exercise 1.2.10`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/VisualCounter.java)
 11. [`exercise 1.2.11`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/SmartDate.java)
 12. [`exercise 1.2.12`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/SmartDate.java)
+13. [`exercise 1.2.13`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/Transaction.java)
+14. [`exercise 1.2.14`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/Transaction.java)
