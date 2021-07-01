@@ -13,3 +13,4 @@
 9. [`exercise 1.2.9`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/ex9.java) - relies on [`BinarySearch.java`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/BinarySearch.java) & [`Counter.java`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/Counter.java)
 10. [`exercise 1.2.10`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/VisualCounter.java)
 11. [`exercise 1.2.11`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/SmartDate.java)
+12. [`exercise 1.2.12`](https://github.com/breakthatbass/algorithms/blob/main/chap1/data_abstraction/SmartDate.java)
