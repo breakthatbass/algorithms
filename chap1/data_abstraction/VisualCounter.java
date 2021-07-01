@@ -5,7 +5,7 @@
  * operations.
  *
  * take two arguments `n` and `max` in the constructor, where `n` specifies the
- * maximum umber of operations and `max` specifies the maximum absolute value
+ * maximum number of operations and `max` specifies the maximum absolute value
  * for the counter.
  *
  * as a side effect, create a plot showing the value of the counter each time
@@ -21,7 +21,7 @@ import edu.princeton.cs.algs4.StdRandom;
 
 public class VisualCounter 
 {
-	// instace variables
+	// instance variables
 	private int n;		// max operations
 	private int max;	// max count
 
@@ -48,7 +48,6 @@ public class VisualCounter
 		count++;
 		operations++;
 
-		// plot points and show
 		StdDraw.point(operations, count);
 		StdDraw.show();
 	}
@@ -58,7 +57,6 @@ public class VisualCounter
 		count--;
 		operations++;
 
-		// plot points and show
 		StdDraw.point(operations, count);
 		StdDraw.show();
 	}
@@ -66,6 +64,12 @@ public class VisualCounter
 	public int tally() {
 		return count;
 	}
+
+	public String toString() {
+		return "count: " + count + "; operations: " + operations;
+	}
+
+/******** main ***********/
 
 	public static void main(String[] args)
 	{
@@ -81,7 +85,7 @@ public class VisualCounter
 
 		for (int i = 0; i < n; i++) {
 			int r = StdRandom.uniform(1,100);
-			System.out.println("count: " + vc.tally());
+			System.out.println(vc.toString());
 
 			// comapring against 45 to make the plots go up more often than not
 			if (r > 45)
