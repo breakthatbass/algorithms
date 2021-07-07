@@ -45,6 +45,52 @@ public class Rational
 		return denominator;
 	}
 
+	/***** plus, minus, times, dividedBy, equals, toString  *****/
+
+	public Rational plus(Rational that)
+	{
+		int numer1 = this.numerator() * that.denominator();
+		int numer2 = this.denominator() * that.numerator();
+
+		return new Rational(numer1+numer2, this.denominator()*that.denominator());
+	}
+
+	public Rational minus(Rational that)
+	{
+		int numer1 = this.numerator() * that.denominator();
+		int numer2 = this.denominator() * that.numerator();
+
+		return new Rational(numer1-numer2, this.denominator()*that.denominator());
+	}
+
+	public Rational times(Rational that)
+	{
+		int num = this.numerator() * that.numerator();
+		int denom = this.denominator() * that.denominator();
+
+		return new Rational(num, denom);
+	}
+
+	public Rational dividedBy(Rational that)
+	{
+		Rational tmp = new Rational(that.denominator(), that.numerator());
+		return times(tmp);
+	}
+
+	public boolean equals(Object x)
+	{
+		if (this == x) return true;
+		if (x == null) return false;
+
+		if (this.getClass() != x.getClass()) return false;
+
+		Rational that = (Rational) x;
+
+		if (this.denominator() != that.denominator()) return false;
+		if (this.numerator() != that.numerator()) return false;
+
+		return true;
+	}
 
 
 	public static void main(String[] args)
@@ -52,7 +98,16 @@ public class Rational
 		Rational n = new Rational(4, 1);
 
 		Rational p = new Rational(8, 4);
+		Rational same = new Rational(8, 4);
 
-		System.out.println(p.denominator());
+		Rational test = n.plus(p);
+
+		if (p.equals(same))
+			System.out.println("same");
+		else
+			System.out.println("not the same");
+
+		System.out.println("numer: " + test.numerator());
+		System.out.println("denom: " + test.denominator());
 	}
 }
