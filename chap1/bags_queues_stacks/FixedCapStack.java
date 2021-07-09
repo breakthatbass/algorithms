@@ -8,6 +8,8 @@ public class FixedCapStack
 {
 	private String[] a;
 	private int n;
+
+	// capacity not required: for error checking
 	private int capacity;
 	
 	public FixedCapStack(int capacity)
@@ -18,11 +20,13 @@ public class FixedCapStack
 
 	public boolean isEmpty() { return n == 0; }
 	public int size()		 { return n;  }
+
 	/*** exercise 1.3.1 isFull() ***/
 	public boolean isFull()	 { return n >= capacity; }
 
 	public void push(String item)
 	{
+		// error checking to prevent overflow
 		if ((n+1) > capacity) {
 			System.out.println("stack is full with " + this.size() + " items");
 			return;
