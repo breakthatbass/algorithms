@@ -5,8 +5,10 @@
  * the stack (without popping it)
  */
 
+import java.util.Iterator;
 
-public class Stack<Item> {
+
+public class Stack<Item> implements Iterable<Item> {
 	
 	private Node head = null;
 	private int size = 0;
@@ -54,6 +56,23 @@ public class Stack<Item> {
 	}
 
 
+	public Iterator<Item> iterator() {
+		return new StackIterator();
+	}
+
+	private class StackIterator implements Iterator<Item> {
+		private Node current = head;
+		
+		public Item next() {
+			Item tmp = current.item;
+			current = current.next;
+			return tmp;
+		}
+
+		public boolean hasNext() { return current != null; }
+	}
+
+
 
 	public static void main(String[] args)
 	{
@@ -61,12 +80,10 @@ public class Stack<Item> {
 		s.push(1);
 		s.push(2);
 		s.push(3);
-
+		s.push(4);
+		
 		System.out.println("peeking: " + s.peek());
-		System.out.println(s.pop());
-		System.out.println("peeking: " + s.peek());
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println("peeking: " + s.peek());
+		
+		for (int d : s) System.out.println(d);
 	}
 }
