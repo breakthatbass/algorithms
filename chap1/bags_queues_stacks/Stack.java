@@ -55,7 +55,8 @@ public class Stack<Item> implements Iterable<Item> {
 			return null;
 	}
 
-
+	
+	// iterator
 	public Iterator<Item> iterator() {
 		return new StackIterator();
 	}
@@ -71,6 +72,22 @@ public class Stack<Item> implements Iterable<Item> {
 
 		public boolean hasNext() { return current != null; }
 	}
+	// iterator end
+	
+	public String toString() {
+		String s = "[";
+		int limit = this.size;
+		int i = 1;
+
+		for (Item d: this) {
+			s += d;
+			if (i < limit) s += ", ";
+			i++;
+		}
+		s += "]";
+		return s;
+	}
+
 
 
 
@@ -85,5 +102,6 @@ public class Stack<Item> implements Iterable<Item> {
 		System.out.println("peeking: " + s.peek());
 		
 		for (int d : s) System.out.println(d);
+		System.out.println(s);
 	}
 }
