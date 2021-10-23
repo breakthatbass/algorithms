@@ -4,6 +4,9 @@
  * give the contents and size of the array for ResizingArrayStackOfStrings
  * with the input
  *		it was - the best - of times - - - it was - the - -
+ *
+ *	size: 9
+ *	contents: [the, was, it, times, of, best, the, was, it]
  */
 
 import edu.princeton.cs.algs4.StdIn;
@@ -24,6 +27,5 @@ public class ResizeArrayStack
 
 		System.out.println("\nsize: " + s.size());
 		System.out.println("\ncontents: " + s.toString());
-		for (String t : s) System.out.println(t); 
 	}
 }
