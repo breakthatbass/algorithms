@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
-USAGE = '''
+'''
+created by: taylor gamache
+date: 10/28/21
+
+script to compile and run java programs more quickly
+
 usage: 
 compiling: ./jvm file.java -l
 running:   ./jvm -r file -l
@@ -11,7 +16,7 @@ file.java -> file to be compiled
 '''
 
 import os
-import os.path
+import sys
 from argparse import ArgumentParser
 
 
@@ -39,7 +44,21 @@ def get_run_cmd(file, lib=False):
 	else:
 		return f'{JR} {file}'
 
+def get_cmp_and_run_cmd(file, lib=False):
+	'''attempt to compile and then run a java program'''
+	
+	# get command to compile and attempt at compilation
+	cmp_cmd = get_jvm_cmd(file, lib)
+	os.system(cmp_cmd)
 
+	# remove .java from end of file
+	new_file = os.path.splitext(file)[0]
+
+	# attempt to run
+	run_cmd = get_run_cmd(new_file, lib)
+	os.system(run_cmd)
+
+	
 
 def main():
 	a = ArgumentParser(description='script to compile/run java programs')
@@ -49,16 +68,24 @@ def main():
 	a.add_argument('--run', '-r', 
 				   action='store_true', 
 				   help='run a compiled java program')
+	a.add_argument('--quick', '-q',
+				   action='store_true',
+				   help='attempt to comile and run a java program')
 	a.add_argument('file', help='file to be compiled/run')
 
 	res = a.parse_args()
 
+	if res.run and res.quick:
+		res.run = False
+	
 	if res.run:
 		cmd = get_run_cmd(res.file, res.lib)
+		os.system(cmd)
+	elif res.quick:
+		get_cmp_and_run_cmd(res.file, res.lib)
 	else:
 		cmd = get_jvm_cmd(res.file, res.lib)
-
-	os.system(cmd)
+		os.system(cmd)
 
 if __name__ == '__main__':
 	main()
