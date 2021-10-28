@@ -19,12 +19,10 @@ import os
 import sys
 from argparse import ArgumentParser
 
-
 JC = 'javac'
 JR = 'java'
 JC_ALGS4_LIB = 'javac-algs4'	# compile with lib
 JR_ALGS4_LIB = 'java-algs4'	# run with lib
-
 
 
 def get_jvm_cmd(file, lib=False):
@@ -44,9 +42,9 @@ def get_run_cmd(file, lib=False):
 	else:
 		return f'{JR} {file}'
 
+
 def get_cmp_and_run_cmd(file, lib=False):
 	'''attempt to compile and then run a java program'''
-	
 	# get command to compile and attempt at compilation
 	cmp_cmd = get_jvm_cmd(file, lib)
 	os.system(cmp_cmd)
@@ -58,7 +56,6 @@ def get_cmp_and_run_cmd(file, lib=False):
 	run_cmd = get_run_cmd(new_file, lib)
 	os.system(run_cmd)
 
-	
 
 def main():
 	a = ArgumentParser(description='script to compile/run java programs')
