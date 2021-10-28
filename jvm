@@ -43,12 +43,16 @@ def get_run_cmd(file, lib=False):
 	else:
 		return f'{JR} {file}'
 
-
+import subprocess
 def get_cmp_and_run_cmd(file, lib=False):
 	'''attempt to compile and then run a java program'''
 	# get command to compile and attempt at compilation
 	cmp_cmd = get_jvm_cmd(file, lib)
-	os.system(cmp_cmd)
+	
+	# if compilation fails, don't try to run anything
+	errno = os.waitstatus_to_exitcode(os.system(cmp_cmd))
+	if errno:
+		sys.exit(errno)
 
 	# remove .java from end of file
 	new_file = os.path.splitext(file)[0]
