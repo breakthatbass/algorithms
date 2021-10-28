@@ -10,9 +10,10 @@ usage:
 compiling: ./jvm file.java -l
 running:   ./jvm -r file -l
 
-file.java -> file to be compiled
--l/--lib  -> compile with algs4 library (optional)
--r/--run  -> run file
+file.java  -> file to be compiled
+-l/--lib   -> compile with algs4 library (optional)
+-r/--run   -> run file
+-q/--quick -> compile file and then run
 '''
 
 import os
