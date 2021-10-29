@@ -3,6 +3,14 @@
  *
  * add a method peek() to Stack that returns the most recently inserted item on
  * the stack (without popping it)
+ *
+ * exercise 1.3.12
+ * 
+ * write an iterable stack client that has the static method copy() that
+ * takes a stack of strings as an argument and returns a copy of the stack.
+ * note: this ability is a prime example of the value of having an iterator,
+ * because it allows development of such functionality without changing the
+ * basic API.
  */
 
 import java.util.Iterator;
@@ -88,6 +96,25 @@ public class Stack<Item> implements Iterable<Item> {
 		return s;
 	}
 
+	// exercise 1.3.12
+	public static Stack<String> copy(Stack<String> s) {
+		// two stacks because copying to one makes it backwards
+		// definitely not the best solution but i dont know
+		// that adding append() was what the book wants either
+
+		Stack<String> newstack = new Stack<>();
+		Stack<String> tmp = new Stack<>();
+
+		for (String el: s) {
+			tmp.push(el);
+		}
+
+		for (String el: tmp) {
+			newstack.push(el);
+		}
+		return newstack;
+	}
+
 
 
 
@@ -103,5 +130,15 @@ public class Stack<Item> implements Iterable<Item> {
 		
 		for (int d : s) System.out.println(d);
 		System.out.println(s);
+
+		// ex 12
+		Stack<String> to_copy = new Stack<String>();
+		to_copy.push("hello");
+		to_copy.push("how");
+		to_copy.push("are");
+		to_copy.push("you");
+
+		System.out.println(to_copy);
+		System.out.println(to_copy.copy(to_copy));
 	}
 }
