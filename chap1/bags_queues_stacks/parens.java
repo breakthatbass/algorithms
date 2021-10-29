@@ -1,5 +1,7 @@
 /*
- * exercise 1.3.9 
+ * exercise 1.3.9
+ *
+ * BUGGY... 
  *
  * write a program that from standard input an expression
  * without left parentheses and prints the equivalent infix expression
@@ -19,50 +21,51 @@
  */
 
 import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.Stack;
 
 public class parens 
 {
-	private static int count_parens(String s)
+	private static String fix_parens(String s)
 	{
-		int paren_count = 0;
-		int len = s.length();
-		for (int i = 0; i < len; i++) {
-			char c = s.charAt(i);
-			if (c == ')')
-				paren_count++;
+		Stack<String> opd = new Stack<>(); // operands
+		Stack<String> opr = new Stack<>(); // operators
+
+		String[] input = s.split("\\s");
+
+		for (String v : input) {
+			if (v.equals("(")) {
+
+			
+			// if we have an operator
+			} else if (v.equals("+") || v.equals("-") || v.equals("*") || v.equals("/")) {
+				opr.push(v);
+			} else if (v.equals(")")) {
+				// we've reached a closing paren
+				// let's pop what we need to build a sub expression
+				String op = opr.pop();
+				String v2 = opd.pop();
+				String v1 = opd.pop();
+
+				// put it all together
+				String sub_exp = "(" + v1 + " " + op + " " + v2 + ")";
+				opd.push(sub_exp);
+			} else {
+				opd.push(v);
+			}
 		}
-		return paren_count;
+		return opd.pop();
 	}
 
-	private static void check(String s, int parens)
-	{
-		if (count_parens(s) != parens) {
-			System.out.println(s + " doesn't have " + parens + " parens");
-			System.exit(-1);
-		}
-	}
-
-
+	
 	public static void main(String[] args)
 	{
-		String test1 = "1 + 1)";
-		String test2 = "1 + 1) * 2 + 3)))";
-		String test3 = "1 + 2) * 3 - 4) * 5 - 6)))";
+		String i = args[0];
 
+		String test1 = "1 + 2 ) * 3 - 4) * 5 - 6)))";
+		String test2 = "1+1)";
 
-		check(test1, 1);
-		check(test2, 4);
-		check(test3, 5);
-
-
-
-
-		/*
-		String in = null;
-		while (!StdIn.isEmpty()) {
-			in = StdIn.readString();
-			System.out.println(in);
-		}
-		*/
+		System.out.println(fix_parens(test1));
+		System.out.println(fix_parens(test2));
+		System.out.println(fix_parens(i));
 	}
 }
