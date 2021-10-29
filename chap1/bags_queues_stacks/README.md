@@ -13,3 +13,5 @@
 8. [`exercise 1.3.8`](https://github.com/breakthatbass/algorithms/blob/main/chap1/bags_queues_stacks/ResizeArrayStack.java)  
 9. [`exercise 1.3.9`](https://github.com/breakthatbass/algorithms/blob/main/chap1/bags_queues_stacks/parens.java)  
 10. [`exercise 1.3.10`](https://github.com/breakthatbass/algorithms/blob/main/chap1/bags_queues_stacks/ex10.java)  
+11. -
+12. [`exercise 1.3.12`](https://github.com/breakthatbass/algorithms/blob/main/chap1/bags_queues_stacks/Stack.java)   
