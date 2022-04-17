@@ -1,4 +1,11 @@
 #!/bin/bash
 
+# don't overwrite a file!
+if [[ -f "$1.java" ]];
+then
+	echo "file '$1' already exists"
+	exit 1
+fi
+
 sh ../../script.sh $1
 vim $1.java
